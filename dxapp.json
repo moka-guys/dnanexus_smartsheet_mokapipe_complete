@@ -1,0 +1,31 @@
+{
+  "name": "smartsheet_mokapipe_complete",
+  "title": "Smartsheet mokapipe complete",
+  "summary": "smartsheet_mokapipe_complete",
+  "dxapi": "1.0.0",
+  "inputSpec": [
+    {
+      "name": "NGS_run",
+      "help": "",
+      "class": "string",
+      "optional": false
+    }
+  ],
+  "outputSpec": [],
+  "runSpec": {
+    "systemRequirements": {
+      "*": {
+        "instanceType": "mem1_ssd1_x2"
+      }
+    },
+    "file": "src/code.py",
+    "release": "12.04",
+    "interpreter": "python2.7",
+    "distribution": "Ubuntu"
+  },
+  "access": {
+    "network": [
+      "*"
+    ]
+  }
+}
