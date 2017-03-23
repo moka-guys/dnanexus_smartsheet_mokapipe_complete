@@ -1,12 +1,15 @@
 {
   "name": "smartsheet_mokapipe_complete",
   "title": "Smartsheet mokapipe complete",
-  "summary": "smartsheet_mokapipe_complete",
+  "summary": "v1.0 smartsheet_mokapipe_complete",
+    "properties": {
+    "github release": "v1.0"
+  },
   "dxapi": "1.0.0",
   "inputSpec": [
     {
       "name": "NGS_run",
-      "help": "",
+      "help": "The string to search for in the 'Title' column on ",
       "class": "string",
       "optional": false
     }
