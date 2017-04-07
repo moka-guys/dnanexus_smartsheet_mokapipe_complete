@@ -62,15 +62,13 @@ def main(NGS_run):
 	#for each row
 	for row in  response['rows']:
 		# loop through the list of columns
-		for col in row['cells']:
-			# for each column header
-			for i in col:
-	    			# use the key to access the cell contents
-				if NGS_run in str(col[i]) and "MokaPipe" in str(col[i]):
-					# capture the row id
-					rownumber=row['id']
+		print row['cells']
+		#if  and NGS_run in row['cells']:
+		if NGS_run in str(row['cells']) and "u'displayValue': u'MokaPipe', u'columnId': "+str(ss_description)+" in str(row['cells'])":
+			print "MATCH"
+			rownumber= row['id']
 
-
+	print rownumber
 	################################### update row###################################
 	#url to read row
 	row_url="https://api.smartsheet.com/2.0/sheets/"+str(smartsheet_sheetid)+"/rows/"+str(rownumber)
@@ -80,7 +78,8 @@ def main(NGS_run):
 	
 	#read response in json
 	response= r.json()
-
+	print response
+	
 	# for each column
 	for col in response["cells"]:
 		# look for the columns containing the date recieved
