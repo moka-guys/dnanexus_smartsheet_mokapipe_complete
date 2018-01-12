@@ -1,4 +1,4 @@
-# dnanexus_update_smartsheet v 1.0
+# dnanexus_update_smartsheet v 1.1
 
 ## What does this app do?
 This app updates smartsheet to mark completion of MokaPipe.
