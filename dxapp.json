@@ -1,9 +1,9 @@
 {
-  "name": "smartsheet_mokapipe_complete_v1.1",
-  "title": "Smartsheet mokapipe complete v1.1",
+  "name": "smartsheet_mokapipe_complete_v1.2",
+  "title": "Smartsheet mokapipe complete v1.2",
   "summary": "v1.1 smartsheet_mokapipe_complete",
     "properties": {
-    "github release": "v1.1"
+    "github release": "v1.2"
   },
   "dxapi": "1.0.0",
   "inputSpec": [
@@ -27,6 +27,7 @@
     "distribution": "Ubuntu"
   },
   "access": {
+    "allProjects":"VIEW",
     "network": [
       "*"
     ]

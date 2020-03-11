@@ -22,8 +22,18 @@ def main(NGS_run):
 	'''update smartsheet to say demultiplexing is complete (add the completed date and calculate the duration (in days) and if met TAT)'''
 	
 	################define smartsheet variables#################
-	# read API KEY
-	API_KEY=open('/home/dnanexus/APIKEY.txt','r')
+	# download the smartsheet api key from 001_auth
+	# parse all the files in authentication_project
+	for file in dxpy.find_data_objects(classname="file", project="project-FQqXfYQ0Z0gqx7XG9Z2b4K43"):
+		#create a dxlink to each file and then run dx describe to get properties, such as filename
+		description =  dxpy.describe(dxpy.dxlink(file["id"],project_id=file["project"]))
+		# if the filename is smartsheet_api_token
+		if description["name"] == "smartsheet_api_token":
+			# download the file.
+			dxpy.download_dxfile(dxpy.dxlink(file["id"],project_id=file["project"]),"smartsheet_api_token")
+
+	# read and assign api key to variable
+	API_KEY=open('/home/dnanexus/smartsheet_api_token','r')
 	for line in API_KEY:
 		smartsheet_api_key=line
 

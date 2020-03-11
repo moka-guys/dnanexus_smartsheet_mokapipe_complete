@@ -1,4 +1,4 @@
-# dnanexus_update_smartsheet v 1.1
+# dnanexus_update_smartsheet v 1.2
 
 ## What does this app do?
 This app updates smartsheet to mark completion of MokaPipe.
@@ -8,9 +8,10 @@ This app is scheduled to run automatically once all the samples have been proces
 
 ## What data are required for this app to run?
 The name of the runfolder is passed to the app as a parameter.
+A API token is required to be saved in 001_Authentication
 
 ## How does this app work?
-The app is a Python script and uses the HTTP requests module and API key to access the smartsheet GIx OPMS page.
+The app is a Python script and uses the HTTP requests module and API key (downloaded from 001_Authentication) to access the smartsheet GIx OPMS page.
 It looks for the entry to say that this run is in progress and updates to say it is complete, and calculates the time taken.
 
 ## What does this app output?
