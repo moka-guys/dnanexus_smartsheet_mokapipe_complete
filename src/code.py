@@ -29,8 +29,8 @@ def main(NGS_run):
 		description =  dxpy.describe(dxpy.dxlink(file["id"],project_id=file["project"]))
 		# if the filename is smartsheet_api_token
 		if description["name"] == "smartsheet_api_token":
-				# download the file.
-				dxpy.download_dxfile(dxpy.dxlink(file["id"],project_id=file["project"]),"smartsheet_api_token")
+			# download the file.
+			dxpy.download_dxfile(dxpy.dxlink(file["id"],project_id=file["project"]),"smartsheet_api_token")
 
 	# read and assign api key to variable
 	API_KEY=open('/home/dnanexus/smartsheet_api_token','r')
